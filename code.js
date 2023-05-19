@@ -80,7 +80,11 @@ class linkedList {
     }
     // Create a method that takes the linked list and represents it as a string. 
     toString() {
-        
+        theString = '('
+        this.list.forEach(item => {
+            theString = theString + `${item.value}) -> (`
+        })
+        return theString
     }
 }
 
