@@ -23,7 +23,6 @@ class linkedList {
             let previousNode = this.list.indexOf(listItem) - 1
             previousNode.nextNode = listItem
         }
-
     }
 
     prepend(value) {
@@ -82,7 +81,7 @@ class linkedList {
     toString() {
         theString = '('
         this.list.forEach(item => {
-            theString = theString + `${item.value}) -> (`
+            theString += `${item.value}) -> (`
         })
         return theString
     }
