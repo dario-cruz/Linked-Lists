@@ -35,8 +35,21 @@ class linkedList {
         if(this.list[this.list.indexOf(listItem) + 1] !== undefined) {
             listItem.nextNode = this.list[this.list.indexOf(listItem) + 1]
         }
-
     }
+    // Create a method that provides the length of the linkedList.
+    size() {
+        return this.list.length
+    }
+    // Create a method that returns the head (first element) of the linked list.
+    head() {
+        return this.list[0]
+    }
+    // Create a method that returns the tail of the linkedList.
+    tail() {
+        return this.list[this.list.length - 1]
+    }
+    
+
 }
 
 
