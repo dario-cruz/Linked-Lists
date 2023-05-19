@@ -37,7 +37,7 @@ class linkedList {
         }
     }
     // Create a method that provides the length of the linkedList.
-    size() {
+    size() { 
         return this.list.length
     }
     // Create a method that returns the head (first element) of the linked list.
@@ -48,7 +48,30 @@ class linkedList {
     tail() {
         return this.list[this.list.length - 1]
     }
-    
+    // Create method that returns node at given index.
+    at(index) {
+        return this.list[index]
+    }
+    // Create a method that removed the last item from the list.
+    pop() {
+        // Remove the last item in the linkedList array.
+        this.list.shift()
+        // Find the last value in the list.
+        let lastIndex = this.list[this.list.length - 1]
+        // Set value to null as it is end of linkedList.
+        lastIndex.nextNode = null
+    }
+    // Create a method that searched for a node in the linkedList via it's value
+    contains(value) {
+        
+        let result = this.list.find(value)
+
+        if (result !== undefined) {
+            return true
+        } else {
+            return false
+        }
+    }
 
 }
 
