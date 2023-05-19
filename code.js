@@ -63,16 +63,16 @@ class linkedList {
     }
     // Create a method that searched for a node in the linkedList via it's value
     contains(value) {
-        
-        let result = this.list.find(value)
-
-        if (result !== undefined) {
-            return true
-        } else {
-            return false
-        }
+        let condition = ''
+        this.list.forEach(item => {
+            if (item.value == value) {
+                condition = true
+            } else {
+                condition = false
+            }
+        })
+        return condition
     }
-
 }
 
 
