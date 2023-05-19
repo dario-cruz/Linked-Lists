@@ -3,8 +3,9 @@ class linkedList {
     constructor(list = []) {
         this.list = list
     }
+
     append(value) {
-        // Create new node and add it to the list. 
+        // Create new node and add it to end of the list. 
         let listItem = new nodeItem(value)
         this.list.push(listItem)
 
@@ -12,6 +13,8 @@ class linkedList {
         // If the node is not index of 0 and is the last item in the array set tail prop to true. 
         if (this.list.indexOf(listItem) == 0) {
             listItem.head = true
+
+        // If the listItem is the last item in the array and is not the only item, set tail prop to true.
         } else if (this.list.indexOf(listItem) == this.list[this.list.length - 1] && this.list.indexOf(this.list) !== 0) {
             listItem.tail = true
         }
@@ -20,9 +23,22 @@ class linkedList {
             let previousNode = this.list.indexOf(listItem) - 1
             previousNode.nextNode = listItem
         }
-        
+
+    }
+
+    prepend(value) {
+        // Create a new node and add it to the start of the list.
+        let listItem = new nodeItem(value)
+        this.list.unshift(listItem)
+
+        // Find the next item if there is one, and add it as the nextNode property value.
+        if(this.list[this.list.indexOf(listItem) + 1] !== undefined) {
+            listItem.nextNode = this.list[this.list.indexOf(listItem) + 1]
+        }
+
     }
 }
+
 
 
 // Create a node class that contains a param for a value and the
