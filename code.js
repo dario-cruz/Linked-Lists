@@ -73,6 +73,15 @@ class linkedList {
         })
         return condition
     }
+    // Create a method that returns the index of a node that contains a specific value.
+    find(value) {
+        foundNode = this.list.find(element => element.value == value)
+        return this.list.indexOf(foundNode)
+    }
+    // Create a method that takes the linked list and represents it as a string. 
+    toString() {
+        
+    }
 }
 
 
