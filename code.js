@@ -1,3 +1,14 @@
+// Create a node class that contains a param for a value and the
+// next node in the link. 
+class nodeItem {
+    constructor(value = null, nextNode = null) {
+        this.value = value
+        this.nextNode = nextNode
+        this.head = false
+        this.tail = false
+    }
+}
+
 class linkedList {
     // Create constructor for the array that will hold the linkedList.
     constructor(list = []) {
@@ -115,17 +126,3 @@ class linkedList {
         this.list[index - 1].nextItem = this.list[index]
     }
 }
-
-
-
-// Create a node class that contains a param for a value and the
-// next node in the link. 
-class nodeItem {
-    constructor(value = null, nextNode = null) {
-        this.value = value
-        this.nextNode = nextNode
-        this.head = false
-        this.tail = false
-    }
-}
-
