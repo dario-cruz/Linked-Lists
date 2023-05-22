@@ -102,8 +102,18 @@ class linkedList {
         // Insert the new node into the array. 
         this.list.splice(index, 0, newListItem)
     }
+    
+    // Create a node will remove the item at the given index and update linkedList
+    removeAt(index) {
+        // Remove node at a given index
+        this.list.splice(index, 1)
 
-
+        // Update linkedList items to reflect changes.
+        if(this.list[index + 1] !== undefined) {
+            this.list[index].nextItem = this.list[index + 1]
+        }
+        this.list[index - 1].nextItem = this.list[index]
+    }
 }
 
 
