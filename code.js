@@ -73,14 +73,11 @@ class linkedList {
     }
     // Create a method that searched for a node in the linkedList via it's value
     contains(value) {
-        let condition = ''
-        this.list.forEach(item => {
-            if (item.value == value) {
-                condition = true
-            } else {
-                condition = false
-            }
-        })
+        let condition = false
+        let objItem = this.list.find(obj => obj.value === value)
+        if(objItem !== undefined) {
+            condition = true
+        }
         return condition
     }
     // Create a method that returns the index of a node that contains a specific value.
@@ -159,4 +156,4 @@ testLinkedList.append('Peach')
 // console.log(testLinkedList)
 
 // Test contains method, should return true or false
-console.log(testLinkedList.contains('Pineapple'))
+console.log(testLinkedList.contains('Kiwi'))
