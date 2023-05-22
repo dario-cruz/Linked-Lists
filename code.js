@@ -82,14 +82,18 @@ class linkedList {
     }
     // Create a method that returns the index of a node that contains a specific value.
     find(value) {
-        foundNode = this.list.find(element => element.value == value)
+        let foundNode = this.list.find(element => element.value == value)
         return this.list.indexOf(foundNode)
     }
     // Create a method that takes the linked list and represents it as a string. 
     toString() {
-        theString = '('
+        let theString = '('
         this.list.forEach(item => {
-            theString += `${item.value}) -> (`
+            if (item.nextNode !== null) {
+                theString += ` ${item.value} ) -> (`
+            } else {
+                theString += ` ${item.value} ) -> ( NULL )`
+            }
         })
         return theString
     }
@@ -156,4 +160,10 @@ testLinkedList.append('Peach')
 // console.log(testLinkedList)
 
 // Test contains method, should return true or false
-console.log(testLinkedList.contains('Kiwi'))
+// console.log(testLinkedList.contains('Kiwi'))
+
+// Test find method, should return the index of the nodeItem if it exists.
+// console.log(testLinkedList.find('Kiwi'))
+
+// Test, to string method, should return a visual of the linkedList. 
+// console.log(testLinkedList.toString())
