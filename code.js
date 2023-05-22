@@ -85,6 +85,25 @@ class linkedList {
         })
         return theString
     }
+
+    // Create a method that inserts an item into the linked list at the given index.
+    insertAt(value, index) {
+        let newListItem = new nodeItem(value)
+        
+        // Update the item that comes before the inserted node
+        let previousItem = this.list[index - 1]
+        previousItem.nextNode = newListItem
+        
+        // If inserted node is not the last in the list update newListItem with nextNode.
+        if (this.list[index + 1] !== undefined) {
+            let nextItem = this.list[index + 1]
+            newListItem.nextNode = nextItem   
+        }
+        // Insert the new node into the array. 
+        this.list.splice(index, 0, newListItem)
+    }
+
+
 }
 
 
