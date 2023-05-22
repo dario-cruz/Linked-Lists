@@ -167,3 +167,13 @@ testLinkedList.append('Peach')
 
 // Test, to string method, should return a visual of the linkedList. 
 // console.log(testLinkedList.toString())
+
+// Test insertAt method, should insert new node in location and update links respectively. 
+// testLinkedList.insertAt('Dragon Fruit', 3)
+// console.log(testLinkedList)
+// console.log(testLinkedList.toString())
+
+// Test removeAt method, should remove node at specific location and update links respectively. 
+// testLinkedList.removeAt(1)
+// console.log(testLinkedList)
+// console.log(testLinkedList.toString())
