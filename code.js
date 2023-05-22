@@ -29,10 +29,10 @@ class linkedList {
         } else if (this.list.indexOf(listItem) == this.list[this.list.length - 1] && this.list.indexOf(this.list) !== 0) {
             listItem.tail = true
         }
-        // If the node not the first item, add pointer to previous item to complete the link. 
+        // If the node not the first item, add pointer to previous item to complete the link.
         if (this.list.indexOf(listItem) !== 0) {
-            let previousNode = this.list.indexOf(listItem) - 1
-            previousNode.nextNode = listItem
+            let previousNodeIndex = this.list.indexOf(listItem)
+            this.list[previousNodeIndex - 1].nextNode = listItem
         }
     }
 
@@ -65,11 +65,11 @@ class linkedList {
     // Create a method that removed the last item from the list.
     pop() {
         // Remove the last item in the linkedList array.
-        this.list.shift()
+        this.list.pop()
         // Find the last value in the list.
-        let lastIndex = this.list[this.list.length - 1]
         // Set value to null as it is end of linkedList.
-        lastIndex.nextNode = null
+        this.list[this.list.length - 1].nextNode = null
+        this.list[this.list.length - 1].tail = true
     }
     // Create a method that searched for a node in the linkedList via it's value
     contains(value) {
@@ -126,3 +126,37 @@ class linkedList {
         this.list[index - 1].nextItem = this.list[index]
     }
 }
+
+
+
+// Make use of the created classes to make a linked list and test all functions. 
+
+let testLinkedList = new linkedList
+
+testLinkedList.append('Apple')
+testLinkedList.append('Banana')
+testLinkedList.append('Oranges')
+testLinkedList.append('Pineapple')
+testLinkedList.append('Kiwi')
+testLinkedList.append('Plum')
+testLinkedList.append('Peach')
+
+// Test creation of list.
+// console.log(testLinkedList)
+
+// Test size method
+// console.log(testLinkedList.size())
+
+// Test head and tail methods
+// console.log(testLinkedList.head())
+// console.log(testLinkedList.tail())
+
+// Test at method
+// console.log(testLinkedList.at(3))
+
+// Test pop method functionality.
+// testLinkedList.pop()
+// console.log(testLinkedList)
+
+// Test contains method, should return true or false
+console.log(testLinkedList.contains('Pineapple'))
